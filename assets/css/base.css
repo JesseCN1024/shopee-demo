@@ -1,0 +1,172 @@
+:root{
+    --primary-color: #f7472e;
+    --white-color: white;
+    --black-color: black;
+    /* This color is good for text to read */
+    --text-color: #333; 
+    --border-color: #dbdbdb;
+    --hover-color: #fafafa;
+    --shadow-color: rgb(0 0 0 / 5%);
+
+    --header-height: 120px;
+    --headernav-height: 31px;
+    --headersearch-height: calc(var(--header-height) - var(--headernav-height));
+    --header-filter-height: 0;
+    --content-margin-top: calc(var(--header-height) + var(--header-filter-height))
+}
+html{
+    font-size: 100%; /*16px, to set it to 12px -> 62.5%*/
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    box-sizing: inherit;
+}
+p{
+    /* 1rem here = basic fontsize of html which is 16px */
+    font-size: 1rem;
+}
+
+.open{
+    display: block !important;
+}
+
+.modal-open{
+    display: flex !important;
+}
+
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.grid__full{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap ;
+}
+
+/* Margin */
+.m-t-9{
+    margin-top: 9px;
+}
+.child-m-t-9 > *{
+    margin-top: 9px;
+}
+.m-r-8{
+    margin-right: 8px;
+}
+.m-t-48{
+    margin-top: 48px;
+}
+.m-b-32{
+    margin-bottom: 32px;
+}
+/* Border */
+.bor-top{
+    border-top: solid 1px rgba(0,0,0,0.05);
+}
+.wrapper{
+    overflow: hidden;
+}
+
+/* CSS communal btn */
+.btn{
+    display: inline-block;
+    min-width: 142px;
+    height: 34px;
+    border: none;
+    border-radius: 2px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 36px;
+    cursor: pointer;
+    outline: none;
+    color: var(--text-color);
+
+}
+.btn.btn-hover:hover{
+    background-color: rgba(0,0,0,0.05);
+}
+
+.btn.btn-primary{   
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.btn.btn-disabled{
+    cursor:default;
+    background-color: #ccc;
+    color: var(--text-color);
+}
+.btn.btn-withicon{
+    display: flex;
+    align-items: center;
+}
+.btn.btn-size-s{
+    height: 32px;
+    font-size: 12px;
+}
+
+
+.shadow-btn{
+    box-shadow: 0px 1px rgb(0 0 0 / 5%);
+}
+
+/* Pagination UI */
+.pagination{
+    list-style: none;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.pagination__item{
+    flex:1;
+    max-width: 40px;
+    height:30px;
+    flex:1;
+    margin: 0 12px;
+}
+.pagination__item-btn{
+    /* display: block; */
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    /* align number in the middle */
+    line-height: 30px;
+    background-color: #F5F5F5;
+    color: #939393;
+    border: none;
+    border-radius: 2px;
+    flex:1;
+    padding: 0;
+    cursor: pointer;
+}
+.pagination__item-btn-active{
+    background: var(--primary-color);   
+    color: var(--white-color);
+}
+.pagination__item-btn-active:hover{
+    opacity: .8;
+}
+.pagination__item-btn-icon{
+    font-size: .85rem;
+}
+
+.dark-bg-layer{
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.1);
+    z-index: 1;
+    display: none;
+}

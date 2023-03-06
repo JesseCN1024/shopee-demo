@@ -1,0 +1,527 @@
+* {
+    box-sizing: border-box;
+}
+/* ----------BUILDING GRID */
+.grid {
+    width: 100%;
+    /*Can not be declared because of inheritation*/
+    display: block;
+    /*In case something change its display type*/
+    padding: 0;
+}
+.grid.wide {
+    max-width: 1200px;
+    /* Set margin right/left = auto thuong cho thanh phan do nam vao giua  */
+    margin: 0 auto;
+}
+.row {
+    display: flex;
+    /* flex-wrap: xuống dòng khi tràn  */
+    flex-wrap: wrap;
+    /* Margin right/left = -4 vì padding của col đầu và col cuối đẩy ra -> margin âm để row content trồi ra ngoài 1 chút */
+    margin-right: -4px;
+    margin-left: -4px;
+}
+.col {
+    /* Vi row margin (-) de day content ra ngoai cho padding */
+    padding: 0 4px;
+}
+/* ---------- */
+
+
+
+/* NGUYEN TAC: De @media querry ben duoi css thuong */
+
+/* ----------1. MOBILE RESPONSIVE */
+.c-0{
+   display: none; 
+}
+.c-1 {
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+    /*Gioi han kich thuoc toi da*/
+}
+.c-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+.c-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.c-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+}
+.c-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+}
+.c-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.c-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+}
+.c-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+}
+.c-9 {
+    flex: 0 0 75%;
+    max-width:  75%;
+}
+.c-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+}
+.c-11 {
+    flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+}
+.c-12 {
+    flex: 0 0 100%;
+    max-width:  100%;
+}
+/*--Tao rieng cot c-2.4 cho exercise */
+.c-2-4{
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+/*----------1.1 UNG DUNG OFFSET: align center cho els */
+    /* VD: col l-6 c-o-3 : vi l-6 chiem 6 cot -> con 6 cot -> 3 cot moi ben
+    --> Ve nguyen tac la: chèn số cột trống vào bên trái khi thêm class, ví dụ c-0-3 là thêm 3 cột
+    vào bên trái  */
+.c-o-1 {
+    margin-left: 8.33333%;
+}
+.c-o-2 {
+    margin-left: 16.66667%;
+}
+.c-o-3 {
+    margin-left: 25%;
+}
+.c-o-4 {
+    margin-left: 33.33333%;
+}
+.c-o-5 {
+    margin-left: 41.66667%;
+}
+.c-o-6 {
+    margin-left: 50%;
+}
+.c-o-7 {
+    margin-left: 58.33333%;
+}
+.c-o-8 {
+    margin-left: 66.66667%;
+}
+.c-o-9 {
+    margin-left:  75%;
+}
+.c-o-10 {
+    margin-left: 83.33333%;
+}
+.c-o-11 {
+    margin-left: 91.66667%;
+}
+
+
+/* ---------2. TABLET AND PC RESPONSIVE */
+/* >= Tablet -- Tier 4: Mobile */
+@media (min-width: 740px){
+    .row{
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+    .col{
+        padding: 0 8px;
+    }
+    /* Cac cau truc cho tablet */
+    .m-0{
+        /* De an di 1 cot tren tablet */
+        display: none;
+    }
+    .m-1,
+    .m-2,
+    .m-2-4,
+    .m-3,
+    .m-4,
+    .m-5,
+    .m-6,
+    .m-7,
+    .m-8,
+    .m-9,
+    .m-10,
+    .m-11,
+    .m-12{
+        /* Hạn chế sau này khi áp dụng thẻ này vào các tag như span, div sẽ không bị lỗi display */
+        display: block;
+    }
+    .m-1{
+    /* Parent tag that uses display: flex -> set width=8.3333% or height=8.3333% depending on
+    which flex-direction is (column or row)*/
+    flex: 0 0 8.33333%; 
+    max-width: 8.33333%; /*Gioi han kich thuoc toi da*/
+}
+    .m-2{
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+    .m-2-4{
+    flex: 0 0 20%;
+    max-width: 20%;
+    }
+    .m-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .m-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+    .m-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667% ;
+    }
+    .m-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .m-7 {
+        flex: 0 0 58.33333%;
+        max-width:  58.33333%;
+    }
+    .m-8 {
+        flex: 0 0 66.66667%;
+        max-width:  66.66667%;
+    }
+    .m-9 {
+        flex: 0 0 75%;
+        max-width:  75%;
+    }
+    .m-10 {
+        flex: 0 0 83.33333%;
+        max-width:  83.33333%;
+    }
+    .m-11 {
+        flex: 0 0 91.66667%;
+        max-width:  91.66667%;
+    }
+    .m-12 {
+        flex: 0 0 100%;
+        max-width:  100%;
+    }
+    /* Offset */
+    .m-o-1 {
+    margin-left: 8.33333%;
+    }
+
+    .m-o-2 {
+        margin-left: 16.66667%;
+    }
+
+    .m-o-3 {
+        margin-left: 25%;
+    }
+
+    .m-o-4 {
+        margin-left: 33.33333%;
+    }
+
+    .m-o-5 {
+        margin-left: 41.66667%;
+    }
+    .m-o-6 {
+        margin-left: 50%;
+    }
+    .m-o-7 {
+        margin-left: 58.33333%;
+    }
+
+    .m-o-8 {
+        margin-left: 66.66667%;
+    }
+    .m-o-9 {
+        margin-left:  75%;
+    }
+    .m-o-10 {
+        margin-left: 83.33333%;
+    }
+    .m-o-11 {
+        margin-left: 91.66667%;
+    }
+
+}
+/* Table - Low resolution PC -- Tier 3: Tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+    .wide{
+        width: 644px;
+    }
+}
+/* > Low resolution PC -- Tier 2: PC Resolution a little less than MAX*/ 
+    /* CSS rieng cho layout wide */
+@media (min-width: 1024px) and (max-width: 1239px){
+    .wide{
+        width: 984px;
+    }
+    .wide .row{
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+    .wide col{
+        padding: 0 12px;
+    }
+    .wide .l-0{
+        display: none;
+    }
+    .wide .l-1,
+    .wide .l-2,
+    .wide .l-2-4,
+    .wide .l-3,
+    .wide .l-4,
+    .wide .l-5,
+    .wide .l-6,
+    .wide .l-7,
+    .wide .l-8,
+    .wide .l-9,
+    .wide .l-10,
+    .wide .l-11,
+    .wide .l-12{
+        /* Hạn chế sau này khi áp dụng thẻ này vào các tag như span, div sẽ không bị lỗi display */
+        display: block;
+    }
+    .wide .l-1{
+    /* Parent tag that uses display: flex -> set width=8.3333% or height=8.3333% depending on
+    which flex-direction is (column or row)*/
+    flex: 0 0 8.33333%; 
+    max-width: 8.33333%; /*Gioi han kich thuoc toi da*/
+}
+    .wide .l-2{
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+    .wide .l-2-4{
+    flex: 0 0 20%;
+    max-width: 20%;
+    }  
+    .wide .l-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .wide .l-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+    .wide .l-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667% ;
+    }
+    .wide .l-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .wide .l-7 {
+        flex: 0 0 58.33333%;
+        max-width:  58.33333%;
+    }
+    .wide .l-8 {
+        flex: 0 0 66.66667%;
+        max-width:  66.66667%;
+    }
+    .wide .l-9 {
+        flex: 0 0 75%;
+        max-width:  75%;
+    }
+    .wide .l-10 {
+        flex: 0 0 83.33333%;
+        max-width:  83.33333%;
+    }
+    .wide .l-11 {
+        flex: 0 0 91.66667%;
+        max-width:  91.66667%;
+    }
+    .wide .l-12 {
+        flex: 0 0 100%;
+        max-width:  100%;
+    }
+    /* Offset */
+    .wide .l-o-1 {
+    margin-left: 8.33333%;
+    }
+
+    .wide .l-o-2 {
+        margin-left: 16.66667%;
+    }
+     
+    .wide .l-o-3 {
+        margin-left: 25%;
+    }
+
+    .wide .l-o-4 {
+        margin-left: 33.33333%;
+    }
+
+    .wide .l-o-5 {
+        margin-left: 41.66667%;
+    }
+    .wide .l-o-6 {
+        margin-left: 50%;
+    }
+    .wide .l-o-7 {
+        margin-left: 58.33333%;
+    }
+
+    .wide .l-o-8 {
+        margin-left: 66.66667%;
+    }
+    .wide .l-o-9 {
+        margin-left:  75%;
+    }
+    .wide .l-o-10 {
+        margin-left: 83.33333%;
+    }
+    .wide .l-o-11 {
+        margin-left: 91.66667%;
+    }
+}
+/* > PC low resolution -- Tier 1: PC MAX resolution*/
+@media (min-width: 1113px){
+    .row{
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    .col{
+        padding: 0 5px;
+    }   
+    /* Cac cau truc cho PC */
+    .l-0{
+        display: none;
+    }
+    .l-1,
+    .l-2,
+    .l-2-4,
+    .l-3,
+    .l-4,
+    .l-5,
+    .l-6,
+    .l-7,
+    .l-8,
+    .l-9,
+    .l-10,
+    .l-11,
+    .l-12{
+        /* Hạn chế sau này khi áp dụng thẻ này vào các tag như span, div sẽ không bị lỗi display */
+        display: block;
+    }
+    .l-1{
+    /* Parent tag that uses display: flex -> set width=8.3333% or height=8.3333% depending on
+    which flex-direction is (column or row)*/
+    flex: 0 0 8.33333%; 
+    max-width: 8.33333%; /*Gioi han kich thuoc toi da*/
+}
+    .l-2{
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+    .l-2-4{
+    flex: 0 0 20%;
+    max-width: 20%;
+    }
+    .l-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .l-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+    .l-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667% ;
+    }
+    .l-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .l-7 {
+        flex: 0 0 58.33333%;
+        max-width:  58.33333%;
+    }
+    .l-8 {
+        flex: 0 0 66.66667%;
+        max-width:  66.66667%;
+    }
+    .l-9 {
+        flex: 0 0 75%;
+        max-width:  75%;
+    }
+    .l-10 {
+        flex: 0 0 83.33333%;
+        max-width:  83.33333%;
+    }
+    .l-11 {
+        flex: 0 0 91.66667%;
+        max-width:  91.66667%;
+    }
+    .l-12 {
+        flex: 0 0 100%;
+        max-width:  100%;
+    }
+    .l-o-1 {
+    margin-left: 8.33333%;
+    }
+
+    .l-o-2 {
+        margin-left: 16.66667%;
+    }
+
+    .l-o-3 {
+        margin-left: 25%;
+    }
+
+    .l-o-4 {
+        margin-left: 33.33333%;
+    }
+
+    .l-o-5 {
+        margin-left: 41.66667%;
+    }
+    .l-o-6 {
+        margin-left: 50%;
+    }
+    .l-o-7 {
+        margin-left: 58.33333%;
+    }
+
+    .l-o-8 {
+        margin-left: 66.66667%;
+    }
+    .l-o-9 {
+        margin-left:  75%;
+    }
+    .l-o-10 {
+        margin-left: 83.33333%;
+    }
+    .l-o-11 {
+        margin-left: 91.66667%;
+    }
+}
+
+
+
+
+/* No gutters: trong truong hop muon trinh bay els dang luoi nhu facebook khog can gutters */
+    /* De su dung --> chi can them "no-gutters" vao row */
+.row.no-gutters{
+    margin-left:0;
+    margin-right: 0;
+}
+.row.no-gutters .col{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
